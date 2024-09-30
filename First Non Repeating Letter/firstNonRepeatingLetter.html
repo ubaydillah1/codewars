@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FirsNonRepeatingLetter</title>
+  </head>
+  <body>
+    <script>
+      function firstNonRepeatingLetter(s) {
+        const counts = {};
+        const lowerCase = s.toLowerCase();
+
+        for (const letter of lowerCase) {
+          counts[letter] = (counts[letter] || 0) + 1;
+        }
+
+        for (let i = 0; i < s.length; i++) {
+          if (counts[lowerCase[i]] === 1) {
+            return s[i];
+          }
+        }
+
+        return "";
+      }
+
+      console.log(firstNonRepeatingLetter("sTreSS"));
+    </script>
+  </body>
+</html>

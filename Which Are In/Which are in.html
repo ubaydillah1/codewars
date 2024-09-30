@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Which are in?</title>
+  </head>
+  <body>
+    <script>
+      function inArray(array1, array2) {
+        const result = [];
+        array2.forEach((str) => {
+          array1.forEach((copy) => {
+            if (str.includes(copy)) {
+              result.push(copy);
+            }
+          });
+        });
+
+        return [...new Set(result)].sort();
+      }
+
+      console.log(
+        inArray(
+          ["arp", "live", "strong"],
+          ["lively", "alive", "harp", "sharp", "armstrong"]
+        )
+      );
+    </script>
+  </body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Extract URL</title>
+  </head>
+  <body>
+    <!-- Write a function that when given a URL as a string, parses out just the domain name and returns it as a string. For example: -->
+    <!--    * url = "http://github.com/carbonfive/raygun" -> domain name = "github"
+            * url = "http://www.zombie-bites.com"         -> domain name = "zombie-bites"
+            * url = "https://www.cnet.com"                -> domain name = cnet" -->
+    <script>
+      function domainName(url) {
+        const fullURL = url.split(/https?:\/\//);
+        const join = fullURL.join("");
+
+        const splitByPoint = join.split(".");
+        const filter = splitByPoint.filter((word) => {
+          return word !== "www";
+        })[0];
+
+        return filter;
+      }
+
+      domainName("http://github.com/carbonfive/raygun");
+      domainName("http://www.zombie-bites.com");
+      domainName("https://www.cnet.com");
+      domainName("Tokopedia.co");
+    </script>
+  </body>
+</html>
