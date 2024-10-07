@@ -53,7 +53,7 @@ function parseInt(string) {
 
   string.split(/[\s-]+/).forEach((word) => {
     if (word === "and") {
-      return; 
+      return;
     }
 
     if (word in wordsToNumber) {
