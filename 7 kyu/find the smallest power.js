@@ -26,4 +26,6 @@ function findNextPower(val, pow_) {
   }
 }
 
+// find
+
 console.log(findNextPower(12385, 3));
